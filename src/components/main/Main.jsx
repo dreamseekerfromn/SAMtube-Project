@@ -9,6 +9,7 @@
 import { useEffect, useState } from "react"
 import testAPI from "../../api/fetch";
 import Video from "./Video";
+import { Videolist } from "./Videolist";
 
 export default function Main(){
     const [videos, setVideos] = useState([]);
@@ -19,7 +20,7 @@ export default function Main(){
         <div>
             <Video video={videos[0]}/>
             <p>
-                {videos.map((video)=>(<>{console.log(video.title)}</>))}
+                {videos.map((video)=>(<Videolist video={video}/>))}
                 
             </p>
             
