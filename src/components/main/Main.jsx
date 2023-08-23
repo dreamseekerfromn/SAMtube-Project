@@ -6,11 +6,19 @@
  * @returns 
  */
 
+import { useEffect, useState } from "react"
+import testAPI from "../../api/fetch";
+
+
 export default function Main(){
+    const [videos, setVideos] = useState();
+    useEffect(()=>{
+        testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+    },[]);
     return(
         <div>
             <p>
-                HI
+                {console.log(videos)}
             </p>
         </div>
     )
