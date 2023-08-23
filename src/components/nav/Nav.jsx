@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./Search";
 /**
  * Nav()
  * -----------------------------
@@ -21,6 +22,9 @@ export default function Nav(){
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Popular posts <span className="text-warning">(NOT OPEN)</span></a>
+                        </li>
+                        <li>
+                            <SearchBar />
                         </li>
                     </ul>
                 </div>
