@@ -8,18 +8,21 @@
 
 import { useEffect, useState } from "react"
 import testAPI from "../../api/fetch";
-
+import Video from "./Video";
 
 export default function Main(){
-    const [videos, setVideos] = useState();
+    const [videos, setVideos] = useState([]);
     useEffect(()=>{
         testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
     },[]);
     return(
         <div>
+            <Video video={videos[0]}/>
             <p>
-                {console.log(videos)}
+                {videos.map((video)=>(<>{console.log(video.title)}</>))}
+                
             </p>
+            
         </div>
     )
 }
