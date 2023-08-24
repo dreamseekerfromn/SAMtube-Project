@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Main from './components/main/Main';
 import About from './components/commons/About';
 import Footer from './components/commons/Footer';
+import VideoPlayerLayout from './components/main/VideoPlayerLayout';
 
 /**
  * App()
@@ -19,6 +20,7 @@ function App() {
         <Routes >
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />}/>
+          <Route path="/show/:id" element={<VideoPlayerLayout />} />
         </Routes>
         <Footer />
       </BrowserRouter>
