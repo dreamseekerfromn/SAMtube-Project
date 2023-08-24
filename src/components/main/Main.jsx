@@ -19,6 +19,7 @@ export default function Main(){
 
     return(
         <main>
+            {/*temp main page to test fetching api */}
             <div className="container-fluid mb-3" >
                 <div className="row">
                     <div className="col-md-9">
