@@ -16,14 +16,21 @@ export default function Main(){
     useEffect(()=>{
         testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
     },[]);
+
     return(
-        <div>
-            <Video video={videos[0]}/>
-            <p>
-                {videos.map((video)=>(<Videolist video={video}/>))}
-                
-            </p>
-            
-        </div>
+        <main>
+            <div className="container-fluid mb-3" >
+                <div className="row">
+                    <div className="col-md-9">
+                        {/** left column for video & comments & etc */}
+                        <Video video={videos[0]}/>
+                    </div>
+                    <div className="col-md-3">
+                        {/** right column for a list */}
+                        {videos.map((video)=>(<Videolist video={video}/>))}
+                    </div>
+                </div>
+            </div>
+        </main>
     )
 }
