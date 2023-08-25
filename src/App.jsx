@@ -5,6 +5,7 @@ import Main from './components/main/Main';
 import About from './components/commons/About';
 import Footer from './components/commons/Footer';
 import VideoPlayerLayout from './components/main/VideoPlayerLayout';
+import SearchIndex from './components/main/SearchIndex';
 
 /**
  * App()
@@ -19,6 +20,7 @@ function App() {
         <Nav />
         <Routes >
           <Route path="/" element={<Main />} />
+          <Route path="/search/:query" element={<SearchIndex />} />
           <Route path="/about" element={<About />}/>
           <Route path="/show/:id" element={<VideoPlayerLayout />} />
         </Routes>

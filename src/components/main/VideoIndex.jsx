@@ -6,7 +6,9 @@ export default function VideoIndex({videos}){
         <div className="row">
                     {videos.map((video)=>
                         (<div className="col-md-3 p-2">
-                            <VideoCard video={video}/>
+                            <div className="card h-25 w-100" key={video.id.videoId} >
+                                <VideoCard video={video}/>
+                            </div>
                         </div>)
                     )}
         </div>

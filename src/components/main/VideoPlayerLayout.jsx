@@ -31,7 +31,11 @@ export default function VideoPlayerLayout(){
                     </div>
                     <div className="col-md-3">
                         {/** right column for a list */}
-                        {videos.map((video)=>(<VideoCard video={video}/>))}
+                        {videos.map((video)=>(
+                            <div className="card h-25 w-100" key={video.id.videoId} >
+                                <VideoCard video={video}/>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
