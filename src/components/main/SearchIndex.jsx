@@ -3,6 +3,12 @@ import testAPI from "../../api/fetch";
 import VideoIndex from "./VideoIndex";
 import { useParams } from "react-router";
 
+/**
+ * SearchIndex()
+ * ----------------------------------
+ * it will contain the searched result from the api.
+ * @returns 
+ */
 export default function SearchIndex(){
     const [videos, setVideos] = useState([]);
     const [videosLoaded, setVideosLoaded] = useState(false);

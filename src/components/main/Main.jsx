@@ -3,6 +3,12 @@ import testAPI from "../../api/fetch";
 import VideoIndex from "./VideoIndex";
 import { useParams } from "react-router";
 
+/**
+ * Main()
+ * -------------------------------
+ * the page we will see first.
+ * @returns 
+ */
 export default function Main(){
     const [videos, setVideos] = useState([]);
     const [videosLoaded, setVideosLoaded] = useState(false);

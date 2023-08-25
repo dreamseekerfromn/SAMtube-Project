@@ -12,6 +12,12 @@ import Video from "./Video";
 import { VideoCard } from "./VideoCard";
 import { useParams } from "react-router";
 
+/**
+ * VideoPlayerLayout()
+ * -------------------------------------
+ * container for the video player + feed + etc.
+ * @returns 
+ */
 export default function VideoPlayerLayout(){
     const [videos, setVideos] = useState([]);
     useEffect(()=>{

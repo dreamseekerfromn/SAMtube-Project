@@ -22,6 +22,11 @@ export default function SearchBar(){
         setInputQuery(inputField)
     }
 
+    /**
+     * handleSubmitSearch()
+     * ------------------------------
+     * will fire the query to searchIndex.jsx
+     */
     function handleSubmitSearch(){
         nav(`/search/${inputQuery}`);
     }

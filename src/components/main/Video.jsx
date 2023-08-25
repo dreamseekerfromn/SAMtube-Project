@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Video()
+ * ---------------------
+ * a component where iframe api is placed.
+ */
 export default function Video({id}){
     /** this state hook will be used to check the video is ready to render or not */
     const [videoReady, setVideoReady] = useState(false);
