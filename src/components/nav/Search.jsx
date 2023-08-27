@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import testAPI from '../../api/fetch';
+import {testAPI} from '../../api/fetch';
 import { useNavigate } from 'react-router';
 
 export default function SearchBar(){
