@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import testAPI from "../../api/fetch";
+import {testAPI} from "../../api/fetch";
 import VideoIndex from "./VideoIndex";
 import { useParams } from "react-router";
 

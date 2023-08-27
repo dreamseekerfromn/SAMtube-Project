@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useState } from "react"
-import testAPI from "../../api/fetch";
+import { testAPI } from "../../api/fetch";
 import Video from "./Video";
 import { VideoCard } from "./VideoCard";
 import { useParams } from "react-router";
