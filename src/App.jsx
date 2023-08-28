@@ -7,7 +7,6 @@ import Footer from './components/commons/Footer';
 import VideoPlayerLayout from './components/main/VideoPlayerLayout';
 import SearchIndex from './components/main/SearchIndex';
 
-
 /**
  * App()
  * ------------------------------------------
