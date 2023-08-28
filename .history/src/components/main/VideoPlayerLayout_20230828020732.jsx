@@ -7,19 +7,36 @@
  */
 
 import { useEffect, useState } from "react"
-import { testAPI } from "../../api/fetch";
+import { testAPI } from "../api/fetch";
 import Video from "./Video";
 import { VideoCard } from "./VideoCard";
 import { useParams } from "react-router";
-
+import LikenDislikeButtons from "./LikenDislikeButtons";
+import CommentsSection from "./CommentsSection";
 /**
  * VideoPlayerLayout()
  * -------------------------------------
  * container for the video player + feed + etc.
  * @returns 
  */
-export default function VideoPlayerLayout(){
+export default function VideoPlayerLayout() {
+    const [likes, setLikes] = useState(0);
+    const [dislikes, setDislikes] = useState(0);
+    const [comments, setComments] = useState([]);
     const [videos, setVideos] = useState([]);
+    
+    const handleLike = () => {
+        setLikes(likes+1);
+    }
+    
+    const handleDislike = () => {
+        setDislikes(dislikes+1)
+    }
+
+    const handleOnAddComment = (comment) => {
+        setComments([...comments, comment]);
+    }
+    
     useEffect(()=>{
         testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
     },[]);
@@ -34,6 +51,10 @@ export default function VideoPlayerLayout(){
                     <div className="col-md-9">
                         {/** left column for video & comments & etc */}
                         <Video id={id}/>
+                    </div>
+                    <LikenDislikeButtons likes={likes} dislikes={dislikes} onlike={handleLike} onDislike={handleDislike} />
+                    <div className="comments-section">
+                    <CommentsSection video={id} onAddComment={handleOnAddComment} />
                     </div>
                     <div className="col-md-3">
                         {/** right column for a list */}
