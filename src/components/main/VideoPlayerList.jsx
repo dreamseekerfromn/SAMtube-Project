@@ -10,24 +10,29 @@ import { getStatistics } from '../../api/fetch';
  */
 export function VideoPlayerList({video}){
     const [loaded, setloaded] = useState(false);
-    const [videoStat, setVideoStat] = useState({});
+    const [videoStat, setVideoStat] = useState({
+        viewCount:"",
+        likeCount:"",
+        favoriteCount:"",
+        commentCount:"",
+    });
 
     //grab statistics & attatch to videoStat
     useEffect(()=>{
-        console.log(video.id.videoId);
-        //getStatistics(video.id.videoId).then((response)=>response.json()).then((json)=>console.log(json)).catch((err)=>console.error(err));
-        
+        getStatistics(video.id.videoId)
+            .then((response)=>response.json())
+                .then((json)=>setVideoStat(json.items[0].statistics))
+                    .catch((err)=>console.error(err));
     },[]);
 
     useEffect(()=>{
-        if(video){
-            getStatistics(video.id.videoId).then((response)=>console.log(response))
+        if(videoStat){
             setloaded(true);
         }
         else{
             setloaded(false);
         }
-    },[video]);
+    },[videoStat]);
 
     return(
         <>
@@ -35,7 +40,7 @@ export function VideoPlayerList({video}){
             <Link to={`/show/${video.id.videoId}`}>
                 <img src={`${video.snippet.thumbnails.high.url}`} className="card-img-top img-responsive"  />
                 <div className="card-body d-block">
-                    <h6 className="card-title text-truncate">{video.snippet.title}</h6>
+                    <h6 className="card-title">{video.snippet.title}</h6>
                     <p className="card-text">{video.snippet.channelTitle}</p>
                 </div>
             </Link>

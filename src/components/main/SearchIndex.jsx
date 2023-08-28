@@ -26,6 +26,11 @@ export default function SearchIndex(){
         console.log(videos)
     },[]);
 
+    /** will reloaded if url changed */
+    useEffect(()=>{
+        testAPI(8,query).then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+    },[query])
+
     /** if video is loaded set videosLoaded to true */
     useEffect(()=>{
         console.log(videos);
