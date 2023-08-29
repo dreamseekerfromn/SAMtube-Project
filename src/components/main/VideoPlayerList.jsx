@@ -41,7 +41,11 @@ export function VideoPlayerList({video}){
                 <img src={`${video.snippet.thumbnails.high.url}`} className="card-img-top img-responsive"  />
                 <div className="card-body d-block">
                     <h6 className="card-title">{video.snippet.title}</h6>
-                    <p className="card-text">{video.snippet.channelTitle}</p>
+                    <p className="card-text">
+                        {video.snippet.channelTitle}<br/>
+                        {video.snippet.publishTime}<br/>
+                        {videoStat.viewCount}
+                    </p>
                 </div>
             </Link>
             ) : (<div><p>video is not properly loaded</p></div>)}
