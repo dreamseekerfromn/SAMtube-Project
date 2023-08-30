@@ -1,58 +1,36 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 
+/**
+ * CommentsForm()
+ * ----------------------------------
+ * a component to submit comment.
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 export default function CommentsForm({comments, setComments}){
-    //const [comment, setComment] = useState([]);
+
     const {id} = useParams();
     const [author, setAuthor] = useState("");
     const [comment, setComment] = useState("");
 
     function handleAuthorChange(e){
-        console.log(e.target.value)
         setAuthor(e.target.value);
     }
 
     function handleCommentChange(e){
-        console.log(e.target.value)
         setComment(e.target.value);
     }
 
     useEffect(()=>{},[author]);
     useEffect(()=>{},[comment]);
-    useEffect(()=>{
-        localStorage.setItem(`${id}`, JSON.stringify(comments));
-    },[comments]);
-    /*
-    function handleTextChange(event) {
-        setComment({
-          ...comment,
-          [event.target.id]: event.target.value,
-        });
-    }
-    */
-/*
-    function updateComments(e){
-        const form = document.getElementById(e.target.id);
-        
-        if(author.length != 0 && comment.length != 0){
-            const temp = (comments[id] ? [[author, comment]] : Object.assign(comments[id],[author, comment]));
-            setComments({...comments, [id]:[...comments[id],temp]});
-            window.localStorage.setItem('comments', JSON.stringify(comments));
-            
-        }
-        else{
-            alert("The comment & the writer fields cannot be empty.")
-        }
-        form.reset();
-    }
-*/
 
     function updateComments(e){
         const form = document.getElementById(e.target.id);
-        
+        const date = new Date();
         if(author.length != 0 && comment.length != 0){
-            setComments([...comments, {author:author,comment:comment,date:new window.Date()}]); 
-             
+            setComments([...comments, {author:author,comment:comment,date:date.toString()}]); 
         }
         else{
             alert("The comment & the writer fields cannot be empty.")

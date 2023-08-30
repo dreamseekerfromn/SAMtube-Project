@@ -7,10 +7,7 @@ export default function CommentsSection(){
     const {id} = useParams();
     const [comments, setComments] = useState(()=> JSON.parse(localStorage.getItem(`${id}`) || []));
     const [loaded, setLoaded] = useState(false);
-    /* should be
-        [{id:[{author:comment},...]},...] */
 
-    /** load comments from localStorage */
     useEffect(() => {
         const localComments = JSON.parse(localStorage.getItem(`${id}`));
         console.log(localComments);
@@ -40,8 +37,6 @@ export default function CommentsSection(){
                             <CommentsList comment={comment} />
                         </li>
                     ))}
-                
-
                 </ul>) 
                 : (<p>the comment section is not loaded</p>)}
         </div>
