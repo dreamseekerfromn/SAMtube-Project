@@ -12,6 +12,7 @@ import Video from "./Video";
 import { VideoCard } from "./VideoCard";
 import { useParams } from "react-router";
 import { VideoPlayerList } from "./VideoPlayerList";
+import CommentsSection from "./CommentsSection";
 
 /**
  * VideoPlayerLayout()
@@ -33,8 +34,13 @@ export default function VideoPlayerLayout(){
             <div className="container-fluid mb-3" >
                 <div className="row">
                     <div className="col-md-10">
-                        {/** left column for video & comments & etc */}
-                        <Video id={id}/>
+                        <div className="row">
+                            {/** left column for video & comments & etc */}
+                            <Video id={id}/>
+                        </div>
+                        <div className="row">
+                            <CommentsSection />
+                        </div>
                     </div>
                     <div className="col-md-2">
                         {/** right column for a list */}
