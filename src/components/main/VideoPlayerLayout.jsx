@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useState } from "react"
-import { testAPI } from "../../api/fetch";
+import { getSnippet } from "../../api/fetch";
 import Video from "./Video";
 import { VideoCard } from "./VideoCard";
 import { useParams } from "react-router";
@@ -25,7 +25,7 @@ export default function VideoPlayerLayout(){
     const { id } = useParams();
 
     useEffect(()=>{
-        testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+        getSnippet().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
     },[id]);
 
     return(

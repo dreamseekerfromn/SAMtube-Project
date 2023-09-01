@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {testAPI} from '../../api/fetch';
+import {getSnippet} from '../../api/fetch';
 import { useNavigate } from 'react-router';
 
 export default function SearchBar(){
@@ -9,7 +9,7 @@ export default function SearchBar(){
     /** if we want to use some dynamic event */
     useEffect(()=>{
         //ToDo: need to finish this. 
-        //testAPI(8,inputQuery).then((response)=>response.json())
+        //getSnippet(8,inputQuery).then((response)=>response.json())
     },[inputQuery]);
 
     /**
