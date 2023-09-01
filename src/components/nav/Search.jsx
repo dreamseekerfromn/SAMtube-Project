@@ -34,10 +34,12 @@ export default function SearchBar(){
 
     return(
         <div className="row d-md-block d-none">
-            <div className="input-group mb-3 ">
-                <input type="text" id="search_bar" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" onChange={handleTextChange}/>
-                <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={()=>handleSubmitSearch()}>🔎</button>
-            </div>
+            <form onSubmit={()=>handleSubmitSearch()}>
+                <div className="input-group">
+                    <input type="text" id="search_bar" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" onChange={handleTextChange}/>
+                    <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={()=>handleSubmitSearch()}>🔎</button>
+                </div>
+            </form>
         </div>
     )
 }
