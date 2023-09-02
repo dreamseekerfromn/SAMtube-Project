@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import testAPI from '../../api/fetch';
+import {getSnippet} from '../../api/fetch';
 import { useNavigate } from 'react-router';
 
 export default function SearchBar(){
@@ -9,7 +9,7 @@ export default function SearchBar(){
     /** if we want to use some dynamic event */
     useEffect(()=>{
         //ToDo: need to finish this. 
-        //testAPI(8,inputQuery).then((response)=>response.json())
+        //getSnippet(8,inputQuery).then((response)=>response.json())
     },[inputQuery]);
 
     /**
@@ -29,12 +29,13 @@ export default function SearchBar(){
      */
     function handleSubmitSearch(){
         nav(`/search/${inputQuery}`);
+        document.getElementById('search_bar').value = "";
     }
 
     return(
         <div className="row d-md-block d-none">
             <div className="input-group mb-3 ">
-                <input type="text" id="search_bar" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" onChange={handleTextChange}/>
+                <input type="text" id="search_bar" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" onChange={handleTextChange}/>
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={()=>handleSubmitSearch()}>🔎</button>
             </div>
         </div>
