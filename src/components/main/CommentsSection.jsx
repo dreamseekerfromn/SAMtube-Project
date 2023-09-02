@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 
 export default function CommentsSection(){
     const {id} = useParams();
-    const [comments, setComments] = useState(()=> JSON.parse(localStorage.getItem(`${id}`) || []));
+    const [comments, setComments] = useState(()=> localStorage[`${id}`] ? JSON.parse(localStorage.getItem(`${id}`)) : []);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
