@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {testAPI} from "../../api/fetch";
+import {getSnippet} from "../../api/fetch";
 import VideoIndex from "./VideoIndex";
 import { useParams } from "react-router";
 
@@ -18,13 +18,18 @@ export default function SearchIndex(){
     useEffect(()=>{
         console.log("query is"+query);
         if(!query){
-            testAPI().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+            getSnippet().then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
         }
         else{
-            testAPI(8,query).then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+            getSnippet(8,query).then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
         }
         console.log(videos)
     },[]);
+
+    /** will reloaded if url changed */
+    useEffect(()=>{
+        getSnippet(8,query).then((response)=>response.json()).then((json)=>setVideos(json.items)).catch((err)=>console.error(err));
+    },[query])
 
     /** if video is loaded set videosLoaded to true */
     useEffect(()=>{
