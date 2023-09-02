@@ -46,7 +46,7 @@ export default function SearchIndex(){
         <div>
             <div>
                 <p>
-                    searched result for {`${query}`}
+                    searched result for "{`${query}`}"
                 </p>
             </div>
             <div className="container-fluid mb-3" >
