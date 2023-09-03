@@ -33,7 +33,7 @@ export default function VideoPlayerLayout(){
             {/*temp main page to test fetching api */}
             <div className="container-fluid mb-3" >
                 <div className="row">
-                    <div className="col-md-10">
+                    <div className="col-md-10 col-sm-12">
                         <div className="row">
                             {/** left column for video & comments & etc */}
                             <Video id={id}/>
@@ -42,7 +42,7 @@ export default function VideoPlayerLayout(){
                             <CommentsSection />
                         </div>
                     </div>
-                    <div className="col-md-2">
+                    <div className="col-md-2 col-sm-none">
                         {/** right column for a list */}
                         {videos.map((video)=>(
                             <div className="card w-100 p-2" key={video.id.videoId} >

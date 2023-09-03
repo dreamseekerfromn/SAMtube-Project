@@ -22,10 +22,9 @@ export default function Video({id}){
     return(
         <div>
             {videoReady ? (
-                <iframe id="existing-iframe-example"
-                    width="640" height="360"
+                <iframe className="container-fluid"
                     src={`https://www.youtube.com/embed/${id}?enablejsapi=1`}
-                    style={{border: "solid 4px #37474F"}}
+                    style={{border: "solid 4px #37474F",width: "80vw",height: "80vh"}}
                 ></iframe>
             ) : null}
         </div>     
