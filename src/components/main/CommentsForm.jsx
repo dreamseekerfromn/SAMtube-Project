@@ -30,7 +30,7 @@ export default function CommentsForm({comments, setComments}){
         const form = document.getElementById(e.target.id);
         const date = new Date();
         if(author.length != 0 && comment.length != 0){
-            setComments([...comments, {author:author,comment:comment,date:date.toString()}]); 
+            setComments([{author:author,comment:comment,date:date.toString()}, ...comments]); 
         }
         else{
             alert("The comment & the writer fields cannot be empty.")
