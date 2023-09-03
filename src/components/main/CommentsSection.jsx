@@ -31,9 +31,9 @@ export default function CommentsSection(){
         <div>
             <CommentsForm comments={comments} setComments={setComments}/>
             { loaded ? (
-                <ul class="list-group">
+                <ul className="list-group">
                     {comments.map((comment,index)=>(
-                        <li class="list-group-item" key={`${id}index${index}`}>
+                        <li className="list-group-item" key={`${id}index${index}`}>
                             <CommentsList comment={comment} />
                         </li>
                     ))}

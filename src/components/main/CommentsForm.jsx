@@ -49,7 +49,7 @@ export default function CommentsForm({comments, setComments}){
     }
 
     return(
-        <div class="input-group">
+        <div className="input-group">
             <form id={`form_${id}`} onSubmit={(e)=>submitHandler(e)}>
                 <input type="text" className="form-control" id={`author${id}`} placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>handleAuthorChange(e)} ></input>
                 <textarea className="form-control" id={`comment${id}`} aria-label="With textarea" onChange={(e)=>handleCommentChange(e)}></textarea>

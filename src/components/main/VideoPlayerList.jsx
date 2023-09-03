@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getStatistics } from '../../api/fetch';
+import replaceChar from "./replaceChar";
+
 /**
  * VideoPlayerList()
  * ---------------------------------
@@ -40,10 +42,10 @@ export function VideoPlayerList({video}){
             <Link to={`/show/${video.id.videoId}`}>
                 <img src={`${video.snippet.thumbnails.high.url}`} className="card-img-top img-responsive"  />
                 <div className="card-body d-block">
-                    <h6 className="card-title">{video.snippet.title}</h6>
+                    <h6 className="card-title">{replaceChar(video.snippet.title)}</h6>
                     <p className="card-text">
-                        {video.snippet.channelTitle}<br/>
-                        {video.snippet.publishTime}<br/>
+                        {replaceChar(video.snippet.channelTitle)}<br/>
+                        {video.snippet.publishTime.slice(0,10)}<br/>
                         {videoStat.viewCount}
                     </p>
                 </div>

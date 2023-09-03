@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getStatistics } from '../../api/fetch';
+import replaceChar from './replaceChar';
 
 export default function VideoCardDescription({video}){
     const [videoStats, setVideoStats] = useState({
@@ -20,8 +21,8 @@ export default function VideoCardDescription({video}){
 
     return(
         <div className="card-body d-block">
-                <h6 className="card-title text-truncate">{video.snippet.title}</h6>
-                <p className="card-text">{video.snippet.description}</p>
+                <h6 className="card-title text-truncate">{replaceChar(video.snippet.title)}</h6>
+                <p className="card-text">{replaceChar(video.snippet.description)}</p>
                 <p className='card-text'>view:{videoStats.viewCount}</p>
                 <p className='card-text'>like:{videoStats.likeCount}</p>
         </div>
