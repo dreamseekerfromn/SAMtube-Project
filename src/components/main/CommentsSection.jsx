@@ -13,7 +13,6 @@ export default function CommentsSection(){
         console.log(localComments);
         if(localComments){
             setComments(localComments);
-            console.log(comments);
         }
     },[id]);
 
