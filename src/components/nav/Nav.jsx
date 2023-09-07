@@ -20,9 +20,6 @@ export default function Nav(){
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/about">About</Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Popular posts <span className="text-warning">(NOT OPEN)</span></a>
-                        </li>
                         <li>
                             <SearchBar />
                         </li>
