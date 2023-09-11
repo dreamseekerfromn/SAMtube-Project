@@ -38,13 +38,7 @@ Slack is the medium of choice for quick memos, questions and inserts but wheneve
 
 Github Repository:  SAMtube Github Repo
 
-
-.
-
-
-
-
-</p></>
+</p>
             <p>Sung Yi <a href="https://github.com/dreamseekerfromn/"><img src="src/assets/GitHub-Mark.png" style={{width:"80px",height:"80px"}}></img></a></p>
             <p>Mikal Wazeerud-din <a href="#"><img src="src/assets/GitHub-Mark.png" style={{width:"80px",height:"80px"}}></img></a></p>
             <p>Addis Jackson <a href="https://github.com/addisjackson"><img src="src/assets/GitHub-Mark.png" style={{width:"80px",height:"80px"}}></img></a></p>
