@@ -28,8 +28,13 @@ export default function SearchBar(){
      * will fire the query to searchIndex.jsx
      */
     function handleSubmitSearch(){
-        nav(`/search/${inputQuery}`);
-        document.getElementById('search_bar').value = "";
+        if(inputQuery){
+            nav(`/search/${inputQuery}`);
+            document.getElementById('search_bar').value = "";
+        }
+        else{
+            alert("cannot search w/ blank");
+        }
     }
 
     return(
